@@ -1,13 +1,12 @@
-// server.js
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-require('dotenv').config();
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 
-// Middleware
 app.use(cors());
 app.use(express.json());
 
@@ -28,6 +27,9 @@ const authRoutes = require('./routes/authRoutes');
 app.use('/api/auth', authRoutes);
 const expenseRoutes = require('./routes/expenseRoutes');
 app.use('/api/expenses', expenseRoutes);
+
+//Confirming weather my backend is reading or not
+console.log("JWT_SECRET:", process.env.JWT_SECRET);
 
 // Start Server
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
