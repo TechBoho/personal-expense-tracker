@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "react-router-dom": "^7.6.3"
+    "react-router-dom": "^7.14.2"
   },
   "scripts": {
     "client": "cd client && npm start",
